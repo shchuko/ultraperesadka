@@ -44,15 +44,18 @@ button {
     padding: 6px;
 }
 
-
-thead, tbody {
-    display: block;
+ul {
+    list-style: none;
 }
 
-tbody {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
+/*thead, tbody {*/
+/*    display: block;*/
+/*}*/
+
+/*tbody {*/
+/*    overflow-y: auto;*/
+/*    overflow-x: hidden;*/
+/*}*/
 
 table {
     border-collapse: collapse;
@@ -63,7 +66,7 @@ table {
 }
 
 table, td, th {
-    text-align: center;
+    /*text-align: center;*/
     border: 1px solid grey;
 }
 
@@ -91,10 +94,10 @@ input {
 }
 
 #results_table {
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 100%;
+    overflow: scroll;
 }
 
 #settings_columns {
@@ -107,28 +110,68 @@ input {
     margin-bottom: 10px;
 }
 
+#download_button {
+    margin-top: 10px;
+}
+
 /* Mobile */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-device-width: 1000px) {
     html {
+        font-size: 36px;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 10px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input[type="text"] {
+        font-size: 36px;
+    }
+
+    input[type="number"] {
+        font-size: 36px;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(2.7);
     }
 
     body {
-        width: unset;
-        padding: 20px 20px 20px 20px;
+        padding: 20px 40px 20px 40px;
     }
 
     button {
-        margin: 0 auto;
-        width: max-content;
         padding: 6px;
+        font-size: 50px;
     }
 
     #settings_columns {
         grid-template-columns: 1fr;
     }
 
+    li::marker {
+        position: relative;
+    }
 
-    /*input[type=checkbox] {*/
-    /*    transform: scale(1.5);*/
-    /*}*/
+    #results, #generate_button_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #generate_button_wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+/*Desktop vertical*/
+@media only screen and (max-width: 800px) {
+    #settings_columns {
+        grid-template-columns: 1fr;
+    }
 }

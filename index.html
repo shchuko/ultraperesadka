@@ -28,14 +28,14 @@
                         <input type="checkbox" checked>
                         Custom boat names
                     </label>
-                    <ol>
-                        <li><label>
+                    <ul>
+                        <li>&#9679<label>
                             <input class="boat_name" type="text" value="boat0">
                         </label></li>
-                        <li><label>
+                        <li>&#9679<label>
                             <input class="boat_name" type="text" value="boat1">
                         </label></li>
-                    </ol>
+                    </ul>
                 </section>
                 <section>
                     <h3>Teams</h3>
@@ -49,14 +49,14 @@
                         Custom team names
                     </label>
                     <p></p>
-                    <ol>
-                        <li><label>
+                    <ul>
+                        <li>&#9679<label>
                             <input class="boat_name" type="text" value="ITMO University sailing team 1">
                         </label></li>
-                        <li><label>
+                        <li>&#9679<label>
                             <input class="boat_name" type="text" value="ITMO University sailing team 2">
                         </label></li>
-                    </ol>
+                    </ul>
                 </section>
             </div>
             <h3>Races</h3>
@@ -66,12 +66,14 @@
             </label>
             <p></p>
         </div>
-        <button id="generate_button">Generate</button>
+        <div id="generate_button_wrapper">
+            <button id="generate_button">Generate</button>
+        </div>
     </section>
 
     <section class="root_section" id="results">
         <h2>Results</h2>
-        <section id="results_table">
+        <div id="results_table">
             <table>
                 <tr>
                     <th class="left_column">Race</th>
@@ -161,7 +163,7 @@
                     <td>2</td>
                 </tr>
             </table>
-        </section>
+        </div>
         <button id="download_button">Download CSV</button>
     </section>
 </main>
