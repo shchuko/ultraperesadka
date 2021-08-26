@@ -18,26 +18,6 @@
         <div id="settings_content">
             <div id="settings_columns">
                 <section>
-                    <h3>Boats</h3>
-                    <label>
-                        Boat count:
-                        <input class="numeric_input" type="number" id="boat_count_input" value="1">
-                    </label>
-                    <p></p>
-                    <label>
-                        <input type="checkbox" checked>
-                        Custom boat names
-                    </label>
-                    <ul>
-                        <li>&#9679<label>
-                            <input class="boat_name" type="text" value="boat0">
-                        </label></li>
-                        <li>&#9679<label>
-                            <input class="boat_name" type="text" value="boat1">
-                        </label></li>
-                    </ul>
-                </section>
-                <section>
                     <h3>Teams</h3>
                     <label>
                         Team count:
@@ -45,18 +25,31 @@
                     </label>
                     <p></p>
                     <label>
-                        <input type="checkbox" checked>
+                        <input type="checkbox" id="custom_team_names_checkbox">
                         Custom team names
                     </label>
                     <p></p>
-                    <ul>
-                        <li>&#9679<label>
-                            <input class="boat_name" type="text" value="ITMO University sailing team 1">
-                        </label></li>
-                        <li>&#9679<label>
-                            <input class="boat_name" type="text" value="ITMO University sailing team 2">
-                        </label></li>
+                    <ul id="custom_team_names_ul">
                     </ul>
+                </section>
+                <section>
+                    <h3>Boats</h3>
+                    <label>
+                        Boat count:
+                        <input class="numeric_input" type="number" id="boat_count_input" value="1">
+                    </label>
+                    <p></p>
+                    <label>
+                        <input type="checkbox" id="custom_boat_names_checkbox">
+                        Custom boat names
+                    </label>
+                    <p></p>
+                    <ul id="custom_boat_names_ul">
+                    </ul>
+                    <template id="custom_li_template">&#9679<label>
+                        <input class="li_text_input" type="text" value="">
+                    </label>
+                    </template>
                 </section>
             </div>
             <h3>Races</h3>
@@ -66,105 +59,29 @@
             </label>
             <p></p>
         </div>
-        <div id="generate_button_wrapper">
-            <button id="generate_button">Generate</button>
-        </div>
+        <!--        <div id="generate_button_wrapper">-->
+        <!--            <button id="generate_button">Generate</button>-->
+        <!--        </div>-->
     </section>
 
-    <section class="root_section" id="results">
-        <h2>Results</h2>
-        <div id="results_table">
-            <table>
-                <tr>
-                    <th class="left_column">Race</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                    <th>2</th>
-                </tr>
-                <tr>
-                    <td class="left_column">ITMO University sailing team 1</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td class="left_column">ITMO University sailing team 2</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-            </table>
-        </div>
-        <button id="download_button">Download CSV</button>
+    <section class="root_section">
+        <section id="results">
+            <h2>Results</h2>
+            <div id="results_table">
+                <table>
+                    <tr>
+                        <th class="left_column">Race</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <td class="left_column">Team1</td>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
+            <button id="download_button">Download CSV</button>
+        </section>
     </section>
 </main>
 <footer>
