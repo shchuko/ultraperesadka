@@ -56,6 +56,7 @@ class TableUpdater {
 class CsvBuilder {
     constructor() {
         this._csv_string = ""
+        this._csv_delim = ";"
     }
 
     update(teams_races_data) {
@@ -74,7 +75,7 @@ class CsvBuilder {
     _appendFirstRow() {
         let str = "Race"
         for (let i = 1; i <= this._teams_races_data[0].racesTotal; ++i) {
-            str = str.concat(",", String(i))
+            str = str.concat(this._csv_delim, String(i))
         }
         this._csv_string = str
     }
@@ -83,7 +84,7 @@ class CsvBuilder {
         let str = team_races.teamName
 
         for (let i = 0; i < team_races.racesTotal; ++i) {
-            str = str.concat(",", team_races.races[i])
+            str = str.concat(this._csv_delim, team_races.races[i])
         }
         this._csv_string = this._csv_string.concat("\n", str)
     }
