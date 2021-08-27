@@ -1,12 +1,13 @@
 window.onload = function () {
     let form_proc = new SettingsFormProcessor()
+    let output_form = new OutputForm()
 
     form_proc.setChangeHandler(() => {
-        console.log("boats: " + form_proc.boatCount)
-        console.log("teams: " + form_proc.teamCount)
-        console.log("races: " + form_proc.raceCount)
-        console.log("boat_names: [" + form_proc.boatNames + "]")
-        console.log("team_names: [" + form_proc.teamNames + "]")
+        let team_races = []
+        for (let i = 0; i < form_proc.teamCount; ++i) {
+            team_races.push(new TeamRaces(form_proc.team_names[i], form_proc.raceCount))
+        }
+        output_form.update(team_races)
     })
     form_proc.run()
 }

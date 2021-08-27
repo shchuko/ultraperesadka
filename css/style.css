@@ -48,15 +48,6 @@ ul {
     list-style: none;
 }
 
-/*thead, tbody {*/
-/*    display: block;*/
-/*}*/
-
-/*tbody {*/
-/*    overflow-y: auto;*/
-/*    overflow-x: hidden;*/
-/*}*/
-
 table {
     border-collapse: collapse;
 }
@@ -66,7 +57,7 @@ table {
 }
 
 table, td, th {
-    /*text-align: center;*/
+    text-align: center;
     border: 1px solid grey;
 }
 
